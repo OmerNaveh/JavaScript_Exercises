@@ -4,16 +4,18 @@ const grades = [50,78,92,65,55]
 
 function GetRange(grades) // Gets The Range
 {
- grades.sort(function(a, b){return a-b}); // arranging the array from lowest to highest
- let min=grades[0];
-let max= grades[(grades.length-1)];
+newArr=grades.slice();
+ newArr.sort(function(a, b){return a-b}); // arranging the array from lowest to highest
+ let min=newArr[0];
+let max= newArr[(newArr.length-1)];
 let rangeGrades= max - min;
 return rangeGrades;
 }
 function GetMedian(grades)
 {
-    grades.sort(function(a, b){return a-b}); // arranging the array from lowest to highest
-    return grades[Math.floor(grades.length/2)];
+    newArr=grades.slice();
+    newArr.sort(function(a, b){return a-b}); // arranging the array from lowest to highest
+    return newArr[Math.floor(newArr.length/2)];
 }
 
 function GetHalfRange(grades)
@@ -22,9 +24,8 @@ function GetHalfRange(grades)
     let halfrange = GetRange(CalcArray);
     return halfrange;
 }
+console.log("Stats: \n" + "Range: " + GetRange(grades)+ "\nMedian: " +GetMedian(grades) + "\nHalfRange: " + GetHalfRange(grades));
 
-
-alert(GetHalfRange(grades));
-
+// alert(GetHalfRange(grades));
 // alert(GetMedian(grades));
 // alert(GetRange(grades));
