@@ -46,9 +46,15 @@ function GetMedian(gradeArr) //Finds Median
     return gradeArr[Math.floor(gradeArr.length/2)];
     
 }
+function GetHalfRange(gradeArr)
+{
+    let CalcArray= gradeArr.slice(Math.floor(gradeArr.length/2));
+    let halfrange = rangeGrades(CalcArray);
+    return halfrange;
+}
 
 
-
-const grades = [10,20,30,40,50,60] ;
+const grades = [92,65,73,80,66,23,77,35] ;
+// alert(GetHalfRange(grades));
 // alert(GetMedian(grades));
 // alert(rangeGrades(grades));
