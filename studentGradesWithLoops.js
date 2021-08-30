@@ -34,8 +34,21 @@ function GetMin(values) // find the lowest grade
     }
 }
 
+function GetMedian(gradeArr) //Finds Median
+{
+    gradeArr.sort(function(a, b){return a-b}); // arranging the array from lowest to highest
+    if(gradeArr.length % 2 ===0)
+    {
+        let median= (((gradeArr[gradeArr.length/2-1]) + (gradeArr[(gradeArr.length/2)])) /2);
+        return median;
+
+    }
+    return gradeArr[Math.floor(gradeArr.length/2)];
+    
+}
 
 
 
-const grades = [73, 91, 88, 56, 62, 84, 95, 96, 88, 92] ;
-alert(rangeGrades(grades));
+const grades = [10,20,30,40,50,60] ;
+// alert(GetMedian(grades));
+// alert(rangeGrades(grades));

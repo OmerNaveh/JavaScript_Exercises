@@ -1,11 +1,18 @@
-const grades = [50,78,92,65]
+const grades = [50,78,92,65,55]
 // your code goes here
-function GetRange(grades)
+grades.sort(function(a, b){return a-b}); // arranging the array from lowest to highest
+
+function GetRange(grades) // Gets The Range
 {
- grades.sort(function(a, b){return a-b});
  let min=grades[0];
 let max= grades[(grades.length-1)];
 let rangeGrades= max - min;
 return rangeGrades;
 }
-alert(GetRange(grades));
+function GetMedian(grades)
+{
+    return grades[Math.floor(grades.length/2)];
+}
+
+alert(GetMedian(grades));
+// alert(GetRange(grades));
