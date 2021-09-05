@@ -87,3 +87,43 @@ function SumAll(arr)
 }
 
 // console.log(SumAll([1,4]));
+
+function pilandrome(str)
+{
+  let str2= str.replace(/[^0-9a-z]/gi, '').toLowerCase(); //extract all non alphanumeric characters
+  let workingArr=str2.split(""); //split str into an array based on spaces
+  for(let i=0; i<workingArr.length; i++)
+  {
+    if(workingArr[i]===workingArr[workingArr.length-1-i]) 
+    {
+        
+    }
+    else{
+      return false;}
+  }
+  return true;
+}
+// console.log(pilandrome("eye"));
+
+function filteredArray(arr, elem)
+{
+  let newArr=[];
+  let count =0;
+  for(let i=0 ; i<arr.length ; i++) //runs on all the element of the large array arr[0]= [1,2,3]
+  {
+    for(let j=0; j<arr[i].length; j++) //runs on all the elemnts of the sub array arr[0][j] 1
+    {
+      if(arr[i][j]===elem)    //if the value of the subarray equals to the element
+      {
+        count++;
+      }
+    }
+    if(count===0)
+    {
+      newArr.push(arr[i])
+    }
+  count=0;
+  }
+  return newArr;
+}
+//console.log(filteredArray([[1,2,3],[2,3,4],[3,4,5]],2))
